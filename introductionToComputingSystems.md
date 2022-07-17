@@ -27,8 +27,13 @@
 [15:12]|[11:9]|[8:0] --> opcode|registerID|address generating bits(AGB). 
 The AGB is used to generate the second operand for the move instructions and it ueses 4 kinds of address accessing modes. The opcode determines which address accessing mode is used.
 - PC-Relative Mode
-There are two instructions `TD: 0010` and `ST: 0011` which are PC-relative. The AGB of these two instructions means the *Offset* to the PC+1: first do sign-extending to 16 bits then AND with `PC+1`(one if for next PC after fetch this instruction).
+There are two instructions `LD: 0010` and `ST: 0011` which are PC-relative. The AGB of these two instructions means the *Offset* to the PC+1: first do sign-extending to 16 bits then AND with `PC+1`(one if for next PC after fetch this instruction).
 The possible range of this offset is (-256,+255).
-- Indirect Mode
+- Indirect Mode: The difference to PC-relative mode is that *After get PC+1+Offset, we can't use this value to fetch the operand, but the location of the operand*. There are two instructions using indirect mode: `LDI: 0110` and `STI: 0111`.
+- Base+Offset Mode: The difference to Indirect Mode is that: *The least 9 bits is not used to add with PC+1. The first 3 bits infer the ID of GPR which used as base register, the remaining 6 bits is sign-extended to 16 bits, then ADD with the base register*. The range of offset is (-32,+31).
+There are two instructions using base+offset mode: `LDR: 0110` and `STR: 0111`.
+- Immediate Mode: Don't need to access memory when calculating the operand to be stored in register. `LEA: 1110` is short for load effective address. The [11:9] bits of this instruction shown the destination register, then sign-extending the [8:0] bits to 16 bits, ADD with incremented-PC, finally store the value to destination register.
+
+
 
   
