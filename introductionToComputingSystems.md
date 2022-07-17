@@ -1,7 +1,7 @@
-# This is a note for <<Introduction to Computing Systems>> 2005 by Yale Patt and Sanjay Patel
+# This is a note for 《Introduction to Computing Systems》 2005 by Yale Patt and Sanjay Patel
 
 # Chapter 5 LC-3 ISA
-> ISA is the *Interface* between the *software commands* and *what the hardware really do*. The ISA determines the computer's **Machine Language**.
+> ISA is the *Interface* between the *software commands* and *what the hardware really do*. The ISA determines the computer's **Machine Language**. Once we have determined the ISA, we can begin to design the hardware to implement the ISA, so we say ISA detemines the chip.
 
 1. Memory
 - address space is: $2^{16}$
@@ -24,9 +24,11 @@
 5. data movement instructions
 > the data movement instructions use all 5 kinds of data accessing modes. Move data between register&memeroy by load and store, between register&IO. There are *7* data move instructions, the format is:
 
-[15:12]|[11:9]|[8:0]
-
-opcode|registerID|address generating bits(AGB)
-
+[15:12]|[11:9]|[8:0] --> opcode|registerID|address generating bits(AGB). 
 The AGB is used to generate the second operand for the move instructions and it ueses 4 kinds of address accessing modes. The opcode determines which address accessing mode is used.
+- PC-Relative Mode
+There are two instructions `TD: 0010` and `ST: 0011` which are PC-relative. The AGB of these two instructions means the *Offset* to the PC+1: first do sign-extending to 16 bits then AND with `PC+1`(one if for next PC after fetch this instruction).
+The possible range of this offset is (-256,+255).
+- Indirect Mode
 
+  
