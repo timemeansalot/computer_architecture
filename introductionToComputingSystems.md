@@ -23,5 +23,10 @@
 - ADD and AND: both are binary operation. [15:12] `0001` for ADD, `0101` for AND. [11:9] destination regitster. [8:6] first source register. 
 5. data movement instructions
 > the data movement instructions use all 5 kinds of data accessing modes. Move data between register&memeroy by load and store, between register&IO. There are *7* data move instructions, the format is:
+
 [15:12]|[11:9]|[8:0]
-opcode|registerID|address generating bits
+
+opcode|registerID|address generating bits(AGB)
+
+The AGB is used to generate the second operand for the move instructions and it ueses 4 kinds of address accessing modes. The opcode determines which address accessing mode is used.
+
