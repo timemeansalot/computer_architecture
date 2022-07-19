@@ -19,15 +19,15 @@
 1. doing digital design we have to handle very complex tasks, so the ability to manage complexity is a key skill for engineer and scientist.
 2. **Abstraction** is a way to hide anything which is not important. In this way a system can be views from different layers, each layer provide interface for adjacent layer and hide their inner side.
 
-The abstraction of computer systems is:
-- software
-- OS
-- Architecutre: like X86, ARM, RISC-V. The architecture is defined by **instructions and registers**, so when we compare the CISC with RISC archtecture, we mainly talk about their ISA and registers.
-- Microarchitecutre: Like AMD Athlon, Intel Core i7. These are different implementation of the X86 architecture.
-> Micro-Archtecture combine **Logic elements** to excute the instructions defined by archtecture.
-- Logic: doing some kind of logic like Adders and Memories.
-- Digital Circuit & Analog Circuit: ADD Gate, OR Gate, Amplifier, Filter
-- Device: Transistors
-- Physics: how electrons move from A to B.
+	The abstraction of computer systems is:
+	- software
+	- OS
+	- Architecutre: like X86, ARM, RISC-V. The architecture is defined by **instructions and registers**, so when we compare the CISC with RISC archtecture, we mainly talk about their ISA and registers.
+	- Microarchitecutre: Like AMD Athlon, Intel Core i7. These are different implementation of the X86 architecture.
+	> Micro-Archtecture combine **Logic elements** to excute the instructions defined by archtecture.
+	- Logic: doing some kind of logic like Adders and Memories.
+	- Digital Circuit & Analog Circuit: ADD Gate, OR Gate, Amplifier, Filter
+	- Device: Transistors
+	- Physics: how electrons move from A to B.
 
  
